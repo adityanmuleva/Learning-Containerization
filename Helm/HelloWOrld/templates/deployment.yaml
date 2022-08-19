@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: hello-world-pod
-        image: adityanmuleva/aadi_hello_world:0.0.0.2
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports: 
-        - containerPort: 5000
+        - containerPort: {{ .Values.service.internalPort }}
